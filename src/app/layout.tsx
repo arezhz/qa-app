@@ -1,24 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import localFont from 'next/font/local'
-import {Providers} from "@/app/provider";
-
-const iranYekan = localFont({
-  src: [
-    {
-      path: '../../public/fonts/yekan.eot',
-      weight: '400',
-    },
-    {
-      path: '../../public/fonts/yekan.woff',
-      weight: '400',
-    },
-    {
-      path: '../../public/fonts/yekan.ttf',
-      weight: '400',
-    },
-  ],
-})
+import {Providers} from "@/components/chakra-ui/provider";
+import Header from "@/components/header/header";
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -31,11 +14,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={iranYekan.className}>
-      <Providers>
-        {children}
-      </Providers>
+    <html lang="fa" dir="rtl">
+      <body>
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   )
