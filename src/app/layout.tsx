@@ -1,8 +1,23 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 
-const inter = Inter({ subsets: ['latin'] })
+const iranYekan = localFont({
+  src: [
+    {
+      path: '../../public/fonts/yekan.eot',
+      weight: '400',
+    },
+    {
+      path: '../../public/fonts/yekan.woff',
+      weight: '400',
+    },
+    {
+      path: '../../public/fonts/yekan.ttf',
+      weight: '400',
+    },
+  ],
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={iranYekan.className}>{children}</body>
     </html>
   )
 }
